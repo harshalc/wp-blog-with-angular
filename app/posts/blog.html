@@ -1,0 +1,15 @@
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-3" ng-repeat="post in vm.posts">
+      <div class="card">
+        <img class="card-img-top" ng-src="{{ vm.images[$index] }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title.rendered }}</h5>
+          <p class="card-text" ng-bind-html="post.excerpt.rendered"></p>
+          <a ui-sref="post({ id: post.id })" class="pull-right">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-default" ng-click="vm.getPosts()">Load More</button>
+</div>
